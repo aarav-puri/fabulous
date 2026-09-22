@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fabulous: A fabulous design skill for AI coding agents</title>
+  <meta name="description" content="Fabulous by Aarav Puri combines Frontend Design, UI/UX Pro Max, 21st MCP, and Higgsfield MCP into one frontend workflow.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171717'/%3E%3Cpath d='M17 45V18h30v8H26v5h18v8H26v6z' fill='%23ffe64a'/%3E%3C/svg%3E">
+  <style>
+    :root { --ink:#171717; --paper:#fff; --yellow:#ffe64a; --pink:#ea4692; --soft:#f1f2ee; --line:#d1d2cc; --muted:#555650; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:24px; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:17px/1.6 Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-underline-offset:4px; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #125ac7; outline-offset:5px; }
+    .skip { position:fixed; top:-100px; left:20px; padding:12px; background:#fff; z-index:10; }
+    .skip:focus { top:15px; }
+    .wrap { width:min(1320px,100%); margin:auto; padding-inline:56px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:24px; padding-block:27px; }
+    .brand { font-size:28px; font-weight:900; letter-spacing:-1.5px; text-decoration:none; }
+    .brand i { color:#be216b; font-style:normal; }
+    nav { display:flex; align-items:center; gap:28px; font-size:15px; }
+    nav a { text-decoration:none; }
+    nav a:hover { text-decoration:underline; }
+    .nav-cta { padding:8px 18px; border:1px solid var(--ink); border-radius:999px; }
+    .hero { background:var(--yellow); overflow:hidden; padding-top:48px; }
+    .kicker { display:flex; justify-content:space-between; gap:24px; font-size:15px; }
+    .kicker span:last-child { color:#50491f; }
+    .wordmark { margin:5px 0 22px; padding-right:.08em; font-size:clamp(82px,17.7vw,240px); font-weight:900; letter-spacing:-.085em; line-height:1.16; }
+    .hero-grid { display:grid; grid-template-columns:1.12fr 1fr; gap:72px; align-items:end; padding-bottom:64px; }
+    h1,h2 { margin:0; font-weight:650; letter-spacing:-1.7px; line-height:1.12; }
+    h1 { margin-bottom:24px; font-size:clamp(32px,3.4vw,48px); }
+    h2 { font-size:clamp(31px,3.5vw,47px); }
+    h3 { margin:0 0 10px; font-size:21px; line-height:1.3; }
+    .hero p { max-width:520px; margin:0; font-size:18px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:11px; padding:13px 21px; border:1px solid var(--ink); border-radius:8px; background:var(--ink); color:white; font-weight:600; font-size:15px; text-decoration:none; }
+    .button.light { background:transparent; color:var(--ink); }
+    .button:hover { transform:translateY(-2px); }
+    .prompt { transform:rotate(-2deg); align-self:center; border:1px solid var(--ink); border-radius:8px; background:white; box-shadow:8px 8px 0 var(--ink); }
+    .prompt-top { display:flex; justify-content:space-between; padding:13px 20px; border-bottom:1px solid var(--line); font-size:14px; }
+    .prompt-body { padding:24px; }
+    .prompt code { display:block; font:16px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .prompt strong { padding:2px 5px; background:var(--yellow); }
+    .prompt-foot { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:23px; color:var(--muted); font-size:13px; }
+    button.copy { padding:5px 12px; border:1px solid #aaa; border-radius:5px; background:white; font:14px Arial,sans-serif; cursor:pointer; }
+    .ribbon { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding-block:23px; border-bottom:1px solid var(--ink); }
+    .ribbon b { display:block; font-size:16px; }
+    .ribbon span { color:var(--muted); font-size:14px; }
+    section { padding-block:88px; }
+    .section-head { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:43px; }
+    .section-head p { max-width:530px; margin:0; color:var(--muted); }
+    .resources { display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+    .resource { padding-top:21px; border-top:2px solid var(--ink); }
+    .resource h3 { margin-top:15px; }
+    .resource p { margin:0 0 17px; color:var(--muted); font-size:16px; }
+    .tag { padding:4px 8px; border:1px solid #aaa; border-radius:4px; font-size:13px; }
+    .resource a { font-size:14px; }
+    .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--ink); }
+    .feature { min-height:250px; padding:26px 26px 20px 0; border-bottom:1px solid var(--line); }
+    .feature:not(:nth-child(3n+1)) { padding-left:26px; border-left:1px solid var(--line); }
+    .feature .index { color:#a02163; font:600 14px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .feature h3 { margin-top:42px; }
+    .feature p { margin:0; color:var(--muted); font-size:16px; }
+    .setup { border-block:1px solid var(--line); background:var(--soft); }
+    .setup-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:85px; }
+    .setup-intro p { color:var(--muted); }
+    .status { min-height:24px; font-size:14px; }
+    .steps { counter-reset:steps; }
+    .step { display:grid; grid-template-columns:36px 1fr; gap:17px; padding-bottom:29px; }
+    .step::before { counter-increment:steps; content:counter(steps); display:grid; place-items:center; width:30px; height:30px; border:1px solid var(--ink); border-radius:50%; background:var(--yellow); font-size:14px; }
+    .step p { margin:0 0 13px; color:var(--muted); font-size:16px; }
+    pre { margin:12px 0; padding:17px; overflow-wrap:anywhere; white-space:pre-wrap; border:1px solid var(--line); border-radius:6px; background:white; font-size:14px; line-height:1.7; }
+    details { padding:16px 0; border-top:1px solid #c6c8c1; }
+    summary { cursor:pointer; font-weight:600; }
+    details p { color:var(--muted); font-size:15px; }
+    .flow { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--ink); }
+    .flow article { min-height:190px; padding:26px 30px 20px 0; border-bottom:1px solid var(--line); }
+    .flow article:not(:nth-child(3n+1)) { padding-left:30px; border-left:1px solid var(--line); }
+    .flow strong { display:block; margin-bottom:28px; font-size:14px; }
+    .flow p { margin:0; color:var(--muted); font-size:16px; }
+    .final { padding-block:60px; background:var(--pink); }
+    .final-inner { display:flex; justify-content:space-between; align-items:center; gap:35px; }
+    footer { display:flex; justify-content:space-between; gap:30px; padding-block:30px!important; font-size:14px; }
+    footer a { margin-left:20px; }
+    @media (max-width:900px) {
+      .wrap { padding-inline:28px; }
+      .hero-grid { gap:40px; }
+      .resources,.feature-grid { grid-template-columns:1fr 1fr; }
+      .feature:not(:nth-child(3n+1)) { padding-left:0; border-left:0; }
+      .feature:nth-child(even) { padding-left:26px; border-left:1px solid var(--line); }
+      .setup-grid { grid-template-columns:1fr 1.3fr; gap:40px; }
+      .ribbon { grid-template-columns:1fr 1fr; }
+      .section-head { gap:30px; }
+    }
+    @media (max-width:650px) {
+      .wrap { padding-inline:22px; }
+      header { padding-block:19px; }
+      nav .desktop { display:none; }
+      .hero { padding-top:30px; }
+      .kicker { align-items:start; font-size:13px; }
+      .kicker span:last-child { max-width:120px; text-align:right; }
+      .wordmark { margin:18px 0 27px; font-size:17vw; }
+      .hero-grid,.section-head,.setup-grid { grid-template-columns:1fr; }
+      .hero-grid { gap:38px; padding-bottom:50px; }
+      h1 { font-size:35px; }
+      .prompt { transform:rotate(-1deg); margin-right:7px; }
+      .prompt code { font-size:14px; }
+      .ribbon { gap:20px; }
+      section { padding-block:58px; }
+      .resources,.feature-grid { grid-template-columns:1fr; }
+      .feature,.feature:nth-child(even) { min-height:auto; padding:22px 0; border-left:0; }
+      .feature h3 { margin-top:18px; }
+      .flow { grid-template-columns:1fr; }
+      .flow article,.flow article:not(:nth-child(3n+1)) { min-height:auto; padding:24px 0; border-left:0; }
+      .flow strong { margin-bottom:12px; }
+      .final-inner,footer { align-items:flex-start; flex-direction:column; }
+      footer a { margin:0 18px 0 0; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button:hover { transform:none; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap">
+    <a class="brand" href="#" aria-label="Fabulous home">fabulous<i>.</i></a>
+    <nav aria-label="Main navigation">
+      <a class="desktop" href="#stack">The stack</a>
+      <a class="desktop" href="#features">Features</a>
+      <a class="desktop" href="#workflow">Workflow</a>
+      <a class="nav-cta" href="#install">Get the skill</a>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="hero">
+      <div class="wrap">
+        <div class="kicker"><span>A fabulous design skill for AI coding agents</span><span>Created by Aarav Puri</span></div>
+        <div class="wordmark" aria-hidden="true">fabulous.</div>
+        <div class="hero-grid">
+          <div>
+            <h1>Design intelligence.<br>More intention.</h1>
+            <p>Give your coding agent a clear creative process. Fabulous combines art direction, UI/UX guidance, component discovery, and custom visuals in one platform-neutral workflow.</p>
+            <div class="actions">
+              <a class="button" href="#install">Install Fabulous <span aria-hidden="true">↗</span></a>
+              <a class="button light" href="README.md" download>Read the README</a>
+            </div>
+          </div>
+          <div class="prompt">
+            <div class="prompt-top"><span>One skill. Any compatible agent.</span><span aria-hidden="true">⌘</span></div>
+            <div class="prompt-body">
+              <code><strong>Use Fabulous</strong><br>Build a portfolio for a student developer. Keep my existing colors. Make the typography distinctive, and check the mobile layout.</code>
+              <div class="prompt-foot"><span>Start with a real brief.</span><button class="copy" id="copy-prompt">Copy prompt</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ribbon wrap">
+      <div><b>Art direction</b><span>Before the first component</span></div>
+      <div><b>Useful interactions</b><span>Every state considered</span></div>
+      <div><b>Responsive by design</b><span>From mobile to desktop</span></div>
+      <div><b>Tools with a purpose</b><span>Use only what helps</span></div>
+    </div>
+
+    <section class="wrap" id="stack">
+      <div class="section-head">
+        <h2>Everything you need<br>to design with intent.</h2>
+        <p>Four resources with distinct roles, coordinated by one skill. Use a resource when it improves the result and keep the interface coherent.</p>
+      </div>
+      <div class="resources">
+        <article class="resource"><span class="tag">Design skill</span><h3>Frontend Design</h3><p>Art direction, composition, typography, and a visual identity grounded in the product.</p><a href="https://github.com/anthropics/skills/tree/main/skills/frontend-design" target="_blank" rel="noopener">View the skill ↗</a></article>
+        <article class="resource"><span class="tag">Design skill</span><h3>UI/UX Pro Max</h3><p>Design systems, UX patterns, accessibility, responsive behavior, and product flows.</p><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">View the skill ↗</a></article>
+        <article class="resource"><span class="tag">Component MCP</span><h3>21st MCP</h3><p>Modern component discovery and interaction patterns, adapted to the project’s visual system.</p><a href="https://21st.dev/mcp" target="_blank" rel="noopener">Explore 21st MCP ↗</a></article>
+        <article class="resource"><span class="tag">Visual MCP</span><h3>Higgsfield MCP</h3><p>Custom visual and motion assets created for a specific place and purpose in the interface.</p><a href="https://docs.higgsfield.ai" target="_blank" rel="noopener">View Higgsfield docs ↗</a></article>
+      </div>
+    </section>
+
+    <section class="wrap" id="features">
+      <div class="section-head"><h2>What Fabulous<br>helps you decide.</h2><p>From the first design choice to the final mobile check, the skill gives the agent concrete guidance instead of a generic aesthetic prompt.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><span class="index">01 / DIRECTION</span><h3>Visual identity</h3><p>Set a point of view for type, color, imagery, layout, and motion before writing components.</p></article>
+        <article class="feature"><span class="index">02 / SYSTEM</span><h3>Design tokens</h3><p>Keep spacing, colors, surfaces, borders, and reusable UI consistent across the product.</p></article>
+        <article class="feature"><span class="index">03 / EXPERIENCE</span><h3>UX and accessibility</h3><p>Plan the primary action, interaction states, keyboard support, contrast, and useful feedback.</p></article>
+        <article class="feature"><span class="index">04 / DISCOVERY</span><h3>Component research</h3><p>Use 21st MCP to find a relevant pattern, then adapt it instead of shipping demo styling.</p></article>
+        <article class="feature"><span class="index">05 / ASSETS</span><h3>Purposeful visuals</h3><p>Use Higgsfield MCP for original visual assets when the placement, crop, and purpose are clear.</p></article>
+        <article class="feature"><span class="index">06 / REVIEW</span><h3>Final quality check</h3><p>Inspect hierarchy, readable type, responsive layout, accessibility, and visual polish.</p></article>
+      </div>
+    </section>
+
+    <div class="setup">
+      <section class="wrap" id="install">
+        <div class="setup-grid">
+          <div class="setup-intro">
+            <h2>Small file.<br>Better starting point.</h2>
+            <p>Install Fabulous with the skills CLI, then connect the resources you want it to coordinate.</p>
+            <a class="button" href="SKILL.md">View SKILL.md <span aria-hidden="true">↗</span></a>
+            <p class="status" id="status" role="status"></p>
+          </div>
+          <div>
+            <div class="steps">
+              <article class="step"><div><h3>Install with npx skills</h3><p>Once the repository is public and has a valid <code>SKILL.md</code>, run this command. Replace the owner and repo with their actual GitHub names.</p><pre><code>npx skills add OWNER/REPOSITORY --skill fabulous</code></pre><p>The skill is named <code>fabulous</code>. For a global install, add <code>-g</code>. The command installs the skill; it does not configure external MCP servers.</p></div></article>
+              <article class="step"><div><h3>Connect the resources</h3><p>Install Frontend Design and UI/UX Pro Max, then connect 21st MCP and Higgsfield MCP. Confirm each resource is visible to your agent.</p></div></article>
+              <article class="step"><div><h3>Give it a real brief</h3><p>Name the audience, goal, content, and constraints. Fabulous handles the design workflow and adapts it to the current project.</p><pre><code>Use Fabulous to redesign this page. Preserve the
+features and branding. Improve hierarchy,
+accessibility, interaction states, and mobile UX.</code></pre></div></article>
+            </div>
+            <details><summary>How do I make my repository installable?</summary><p>Put <code>SKILL.md</code> in <code>skills/fabulous/</code> (or at the repository root), keep the YAML frontmatter with <code>name: fabulous</code> and a description, and push the repository to GitHub. Then use the repository's real <code>OWNER/REPOSITORY</code> in the command above. This is an install through the open <code>skills</code> CLI, not a new npm package named Fabulous.</p></details>
+            <details><summary>Set up UI/UX Pro Max</summary><pre><code>npx ui-ux-pro-max-cli init --ai &lt;your-agent&gt;</code></pre><p>Use an agent name supported by the current UI/UX Pro Max CLI.</p></details>
+            <details><summary>Connect 21st MCP</summary><pre><code>npx @21st-dev/cli@latest init --client &lt;your-agent&gt;</code></pre><p>Select the client that matches your coding agent, then confirm the 21st MCP tools appear.</p></details>
+            <details><summary>Connect Higgsfield MCP</summary><p>Follow the Higgsfield MCP setup for your coding agent and confirm its visual-generation tools appear before using Fabulous.</p></details>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="wrap" id="workflow">
+      <div class="section-head"><h2>From brief<br>to final polish.</h2><p>Fabulous turns the resources into one coherent process instead of four disconnected tools.</p></div>
+      <div class="flow">
+        <article><strong>01 / Understand</strong><h3>Read the product</h3><p>Identify the audience, primary task, content, constraints, and existing visual language.</p></article>
+        <article><strong>02 / Direct</strong><h3>Choose a point of view</h3><p>Set typography, color, layout, spacing, motion, and imagery rules before coding.</p></article>
+        <article><strong>03 / Systemize</strong><h3>Build the foundation</h3><p>Turn the direction into reusable tokens, components, states, and responsive behavior.</p></article>
+        <article><strong>04 / Discover</strong><h3>Use 21st MCP</h3><p>Find components only when they fit, then adapt them to the project instead of preserving demo styling.</p></article>
+        <article><strong>05 / Create</strong><h3>Use Higgsfield MCP</h3><p>Generate visuals only when their placement, crop, contrast, and purpose are already clear.</p></article>
+        <article><strong>06 / Critique</strong><h3>Fix what feels unfinished</h3><p>Review hierarchy, accessibility, responsiveness, interactions, and consistency before finishing.</p></article>
+      </div>
+    </section>
+
+    <section class="final"><div class="wrap final-inner"><div><h2>Make your next build<br>feel like your own.</h2><p>The brief is yours. Fabulous brings the process.</p></div><a class="button" href="#install">Install Fabulous <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="wrap"><span>fabulous. &nbsp; By Aarav Puri</span><div><a href="#install">Setup</a><a href="#workflow">Workflow</a><a href="README.md" download>README</a></div></footer>
+  <script>
+    const button = document.getElementById('copy-prompt');
+    const prompt = 'Use Fabulous to build a portfolio for a student developer. Keep my existing colors. Make the typography distinctive, and check the mobile layout.';
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(prompt);
+        button.textContent = 'Copied!';
+        setTimeout(() => button.textContent = 'Copy prompt', 1800);
+      } catch {
+        button.textContent = 'Copy manually';
+      }
+    });
+  </script>
+</body>
+</html>
