@@ -1,0 +1,16 @@
+{
+  "name": "fabulous-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:icons": "esbuild website/icons.jsx --bundle --minify --format=esm --outfile=website/icons.js"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}
