@@ -37,13 +37,13 @@ If one resource is unavailable, Fabulous continues with the skills, components, 
 
 ### With the skills CLI
 
-Once this skill is in a public GitHub repository, install it with:
+Install it from GitHub with:
 
 ```bash
-npx skills add OWNER/REPOSITORY --skill fabulous
+npx skills add puria1234/fabulous --skill fabulous
 ```
 
-Replace `OWNER/REPOSITORY` with the actual GitHub owner and repository. Use `-g` for a global install. To make a repository compatible with the CLI, commit this `SKILL.md` at the repository root or under `skills/fabulous/`; its YAML frontmatter already includes `name: fabulous` and a description. This CLI installs the skill, but companion MCP servers still need their own setup.
+Use `-g` for a global install. To make a repository compatible with the CLI, commit this `SKILL.md` at the repository root or under `skills/fabulous/`; its YAML frontmatter already includes `name: fabulous` and a description. This CLI installs the skill, but companion MCP servers still need their own setup.
 
 ## Use Fabulous
 
@@ -119,7 +119,7 @@ See the [Higgsfield documentation](https://docs.higgsfield.ai) for authenticatio
 
 ## Repository
 
-The Fabulous source is in this GitHub repository. The repository is currently private, so the `npx skills add` command above is for use after it is made public.
+The Fabulous source is published at [puria1234/fabulous](https://github.com/puria1234/fabulous).
 
 ## Sources
 
