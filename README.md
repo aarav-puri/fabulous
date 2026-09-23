@@ -22,24 +22,20 @@ It uses four resources when they are available:
 
 Fabulous works with any AI coding agent that supports instruction-based skills or reusable prompt files. The exact installation folder depends on the agent.
 
-Required resources:
+Recommended resources:
 
 - Frontend Design
 - UI/UX Pro Max
 - 21st MCP
 - Higgsfield MCP
 
+Fabulous uses whichever resources are available.
+
 ## Install Fabulous
-
-### With the skills CLI
-
-Install it from GitHub with:
 
 ```bash
 npx skills add aarav-puri/fabulous --skill fabulous
 ```
-
-Use `-g` for a global install. To make a repository compatible with the CLI, commit this `SKILL.md` at the repository root or under `skills/fabulous/`; its YAML frontmatter already includes `name: fabulous` and a description. This CLI installs the skill, but companion MCP servers still need their own setup.
 
 ## Use Fabulous
 
