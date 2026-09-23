@@ -1,6 +1,6 @@
 # Fabulous
 
-Fabulous is a design skill by Aarav Puri. It combines deliberate art direction, consistent design systems, useful interactions, and visual QA into one repeatable workflow.
+Fabulous is a design skill that combines deliberate art direction, consistent design systems, useful interactions, and visual QA into one repeatable workflow.
 
 It uses four resources when they are available:
 
