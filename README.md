@@ -1,15 +1,13 @@
 # Fabulous
 
-Fabulous is a platform-neutral frontend design skill by Aarav Puri. It combines deliberate art direction, consistent design systems, useful interactions, and visual QA into one repeatable workflow.
+Fabulous is a design skill by Aarav Puri. It combines deliberate art direction, consistent design systems, useful interactions, and visual QA into one repeatable workflow.
 
-It coordinates four resources when they are available:
+It uses four resources when they are available:
 
 - **Frontend Design** for art direction, composition, typography, and visual identity.
 - **UI/UX Pro Max** for design systems, UX patterns, accessibility, and responsive behavior.
 - **21st MCP** for modern component discovery and interaction patterns.
 - **Higgsfield MCP** for custom visual and motion assets.
-
-The resources support the workflow; Fabulous does not use them simply because they are connected.
 
 ## What Fabulous does
 
@@ -24,14 +22,12 @@ The resources support the workflow; Fabulous does not use them simply because th
 
 Fabulous works with any AI coding agent that supports instruction-based skills or reusable prompt files. The exact installation folder depends on the agent.
 
-Recommended resources:
+Required resources:
 
 - Frontend Design
 - UI/UX Pro Max
 - 21st MCP
 - Higgsfield MCP
-
-If one resource is unavailable, Fabulous continues with the skills, components, and assets it can access and identifies the limitation.
 
 ## Install Fabulous
 
@@ -91,16 +87,7 @@ See [21st MCP setup](https://21st.dev/mcp). After setup, confirm that the 21st t
 
 Connect Higgsfield MCP using the setup instructions for your AI coding agent, and confirm that its tools appear before asking Fabulous to generate visuals.
 
-See the [Higgsfield documentation](https://docs.higgsfield.ai) for authentication and model details.
-
-## How the workflow fits together
-
-1. Fabulous understands the product, audience, goal, constraints, and existing project.
-2. Frontend Design helps establish a distinctive visual direction.
-3. UI/UX Pro Max supports the design system, UX patterns, and accessibility decisions.
-4. 21st MCP helps find relevant components when discovery is useful.
-5. Higgsfield MCP creates custom visuals when the interface actually needs them.
-6. Fabulous implements, reviews, and fixes the responsive experience.
+See the [Higgsfield documentation](https://docs.higgsfield.ai).
 
 ## Troubleshooting
 
