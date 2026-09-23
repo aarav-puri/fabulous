@@ -198,13 +198,13 @@
           </div>
           <div>
             <div class="steps">
-              <article class="step"><div><h3>Install with npx skills</h3><p>Once the repository is public and has a valid <code>SKILL.md</code>, run this command. Replace the owner and repo with their actual GitHub names.</p><pre><code>npx skills add OWNER/REPOSITORY --skill fabulous</code></pre><p>The skill is named <code>fabulous</code>. For a global install, add <code>-g</code>. The command installs the skill; it does not configure external MCP servers.</p></div></article>
+              <article class="step"><div><h3>Install with npx skills</h3><p>Run this command to install Fabulous from GitHub:</p><pre><code>npx skills add puria1234/fabulous --skill fabulous</code></pre><p>The skill is named <code>fabulous</code>. For a global install, add <code>-g</code>. The command installs the skill; it does not configure external MCP servers.</p></div></article>
               <article class="step"><div><h3>Connect the resources</h3><p>Install Frontend Design and UI/UX Pro Max, then connect 21st MCP and Higgsfield MCP. Confirm each resource is visible to your agent.</p></div></article>
               <article class="step"><div><h3>Give it a real brief</h3><p>Name the audience, goal, content, and constraints. Fabulous handles the design workflow and adapts it to the current project.</p><pre><code>Use Fabulous to redesign this page. Preserve the
 features and branding. Improve hierarchy,
 accessibility, interaction states, and mobile UX.</code></pre></div></article>
             </div>
-            <details><summary>How do I make my repository installable?</summary><p>Put <code>SKILL.md</code> in <code>skills/fabulous/</code> (or at the repository root), keep the YAML frontmatter with <code>name: fabulous</code> and a description, and push the repository to GitHub. Then use the repository's real <code>OWNER/REPOSITORY</code> in the command above. This is an install through the open <code>skills</code> CLI, not a new npm package named Fabulous.</p></details>
+            <details><summary>How do I make my repository installable?</summary><p>Put <code>SKILL.md</code> in <code>skills/fabulous/</code> (or at the repository root), keep the YAML frontmatter with <code>name: fabulous</code> and a description, and push the repository to GitHub. The command above installs it from this repository. This is an install through the open <code>skills</code> CLI, not a new npm package named Fabulous.</p></details>
             <details><summary>Set up UI/UX Pro Max</summary><pre><code>npx ui-ux-pro-max-cli init --ai &lt;your-agent&gt;</code></pre><p>Use an agent name supported by the current UI/UX Pro Max CLI.</p></details>
             <details><summary>Connect 21st MCP</summary><pre><code>npx @21st-dev/cli@latest init --client &lt;your-agent&gt;</code></pre><p>Select the client that matches your coding agent, then confirm the 21st MCP tools appear.</p></details>
             <details><summary>Connect Higgsfield MCP</summary><p>Follow the Higgsfield MCP setup for your coding agent and confirm its visual-generation tools appear before using Fabulous.</p></details>
